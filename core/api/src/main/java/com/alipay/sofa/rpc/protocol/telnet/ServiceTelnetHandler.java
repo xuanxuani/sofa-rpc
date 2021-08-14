@@ -1,0 +1,99 @@
+package com.alipay.sofa.rpc.protocol.telnet;
+
+import com.alipay.sofa.rpc.config.ConsumerConfig;
+import com.alipay.sofa.rpc.config.ProviderConfig;
+import com.alipay.sofa.rpc.ext.Extension;
+import com.alipay.sofa.rpc.protocol.*;
+
+@Extension("service")
+public class ServiceTelnetHandler implements TelnetHandler {
+    @Override
+    public String getCommand() {
+        return "service";
+    }
+
+    @Override
+    public String getDescription() {
+        return "show providerconfig!";
+    }
+
+    @Override
+    public String telnet(String message) {
+
+
+        StringBuilder result = new StringBuilder(80000000);
+        ProviderConfigRepository providerConfigRepository = ProviderConfigRepository.getProviderConfigRepository();
+        ConsumerConfigRepository consumerConfigRepository = ConsumerConfigRepository.getConsumerConfigRepository();
+
+        String[] syntax = message.split("\\s+");
+        if (syntax.length != 1) {
+            if (!providerConfigRepository.getProvidedServiceMap().containsKey(syntax[1])) {
+                result.append("The Service is not provided");
+                return result.toString();
+            }
+
+        } else {
+            result.append("The InterfaceId cannot be null,please type help");
+            return result.toString();
+        }
+
+
+        ProviderConfig providerConfig = providerConfigRepository.getProviderConfig(syntax[1]);
+        System.out.println(providerConfig.getWeight());
+        System.out.printf(providerConfig.getInterfaceId());
+        result.append("ProviderConfig:\r\n");
+        result.append("Ref:\t" + TAP + providerConfig.getRef() + "\r\n");
+
+        result.append("Server:\t" + TAP + providerConfig.getServer() + "\r\n");
+
+        result.append("Delay:\t" + TAP + providerConfig.getDelay() + "\r\n");
+        result.append("Weight:\t" + TAP + providerConfig.getWeight() + "\r\n");
+        result.append("Include:" + TAP + providerConfig.getInclude() + "\r\n");
+        result.append("Exclude:" + TAP + providerConfig.getExclude() + "\r\n");
+        result.append("Dynamic:" + TAP + providerConfig.isDynamic() + "\r\n");
+        result.append("Priority:" + TAP + providerConfig.getPriority() + "\r\n");
+        result.append("Bootstrap:" + TAP + providerConfig.getBootstrap() + "\r\n");
+        result.append("Executor:" + TAP + providerConfig.getExecutor() + "\r\n");
+        result.append("Timeout:" + TAP + providerConfig.getTimeout() + "\r\n");
+        result.append("Concurrents:" + TAP + providerConfig.getConcurrents() + "\r\n");
+        result.append("RepeatedExportLimit:\t\t" + providerConfig.getRepeatedExportLimit() + "\r\n");
+        result.append("MethodsLimit:" + TAP + providerConfig.getMethodsLimit() + "\r\n");
+        result.append("ProviderBootstrap:\t\t" + providerConfig.getProviderBootstrap() + "\r\n");
+
+        if (!consumerConfigRepository.getReferredService().containsKey(syntax[1])) {
+            result.append("The service is not referred");
+            return result.toString();
+        }
+        result.append("ConsumerConfig:\r\n");
+        ConsumerConfig consumerConfig = consumerConfigRepository.getConsumerConfig(syntax[1]);
+        result.append("Protocol:" + TAP + consumerConfig.getProtocol() + "\r\n");
+        result.append("DirectUrl:" + TAP + consumerConfig.getDirectUrl() + "\r\n");
+        result.append("isGeneric:" + TAP + consumerConfig.isGeneric() + "\r\n");
+        result.append("InvokeType:" + TAP + consumerConfig.getInvokeType() + "\r\n");
+        result.append("ConnectTimeout:" + TAP + consumerConfig.getConnectTimeout() + "\r\n");
+        result.append("DisconnectTimeout:\t\t" + consumerConfig.getDisconnectTimeout() + "\r\n");
+        result.append("Cluster:" + TAP + consumerConfig.getCluster() + "\r\n");
+        result.append("ConnectionHolder:\t\t" + consumerConfig.getConnectionHolder() + "\r\n");
+        result.append("AddressHolder:" + TAP + consumerConfig.getAddressHolder() + "\r\n");
+        result.append("LoadBalancer:" + TAP + consumerConfig.getLoadBalancer() + "\r\n");
+        result.append("isLazy:\t" + TAP + consumerConfig.isLazy() + "\r\n");
+        result.append("isSticky" + TAP + consumerConfig.isSticky() + "\r\n");
+        result.append("isCheck:" + TAP + consumerConfig.isCheck() + "\r\n");
+        result.append("ConnectionNum:" + TAP + consumerConfig.getConnectionNum() + "\r\n");
+        result.append("HeartbeatPeriod:\t\t" + consumerConfig.getHeartbeatPeriod() + "\r\n");
+        result.append("ReconnectPeriod:\t\t" + consumerConfig.getReconnectPeriod() + "\r\n");
+        result.append("Router:\t" + TAP + consumerConfig.getRouter() + "\r\n");
+        result.append("RouterRef:" + TAP + consumerConfig.getRouterRef() + "\r\n");
+        result.append("OnReturn:" + TAP + consumerConfig.getOnReturn() + "\r\n");
+        result.append("OnConnect:" + TAP + consumerConfig.getOnConnect() + "\r\n");
+        result.append("OnAvailable:" + TAP + consumerConfig.getOnAvailable() + "\r\n");
+        result.append("Bootstrap:" + TAP + consumerConfig.getBootstrap() + "\r\n");
+        result.append("AddressWait:" + TAP + consumerConfig.getAddressWait() + "\r\n");
+        result.append("RepeatedReferLimit:\t\t" + consumerConfig.getRepeatedReferLimit() + "\r\n");
+        result.append("Timeout:" + TAP + consumerConfig.getTimeout() + "\r\n");
+        result.append("Retries:" + TAP + consumerConfig.getRetries() + "\r\n");
+        result.append("Concurrents:" + TAP + consumerConfig.getConcurrents() + "\r\n");
+
+        return result.toString();
+    }
+}
