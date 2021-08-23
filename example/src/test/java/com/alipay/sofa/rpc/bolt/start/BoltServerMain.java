@@ -22,13 +22,10 @@ import com.alipay.sofa.rpc.config.ServerConfig;
 import com.alipay.sofa.rpc.context.RpcRuntimeContext;
 import com.alipay.sofa.rpc.log.Logger;
 import com.alipay.sofa.rpc.log.LoggerFactory;
-import com.alipay.sofa.rpc.protocol.ProviderConfigRepository;
 import com.alipay.sofa.rpc.test.EchoService;
 import com.alipay.sofa.rpc.test.EchoServiceImpl;
 import com.alipay.sofa.rpc.test.HelloService;
 import com.alipay.sofa.rpc.test.HelloServiceImpl;
-
-import java.util.ArrayList;
 
 /**
  *
@@ -40,8 +37,7 @@ public class BoltServerMain {
     /**
      * slf4j Logger for this class
      */
-    static ArrayList<ProviderConfig> list = new ArrayList<>();
-//    private final static Logger LOGGER = LoggerFactory.getLogger(BoltServerMain.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(BoltServerMain.class);
 
     public static void main(String[] args) {
         ApplicationConfig application = new ApplicationConfig().setAppName("test-server");
@@ -67,19 +63,7 @@ public class BoltServerMain {
         providerConfig.export();
         providerConfig2.export();
 
-//        ProviderConfigRepository providerConfigRepository = new ProviderConfigRepository();
-//        ProviderConfig providerConfig = providerConfigRepository.publishHelloService("test-server", 22000);
-//
-//        list.add(providerConfig);
-
-//        LOGGER.warn("started at pid {}", RpcRuntimeContext.PID);
+        LOGGER.warn("started at pid {}", RpcRuntimeContext.PID);
     }
 
-    public static ArrayList<ProviderConfig> getList() {
-        return list;
-    }
-
-    public static void setList(ArrayList<ProviderConfig> list) {
-        BoltServerMain.list = list;
-    }
 }

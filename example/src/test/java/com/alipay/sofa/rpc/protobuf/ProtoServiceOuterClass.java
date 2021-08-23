@@ -44,7 +44,7 @@ public final class ProtoServiceOuterClass {
 
     private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
     static {
-        java.lang.String[] descriptorData = {
+        String[] descriptorData = {
             "\n\022ProtoService.proto\022\034com.alipay.sofa.rp" +
                 "c.protobuf\"O\n\013EchoRequest\022\014\n\004name\030\001 \001(\t\022" +
                 "2\n\005group\030\002 \001(\0162#.com.alipay.sofa.rpc.pro" +
@@ -72,13 +72,13 @@ public final class ProtoServiceOuterClass {
         internal_static_com_alipay_sofa_rpc_protobuf_EchoRequest_fieldAccessorTable = new
                 com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                     internal_static_com_alipay_sofa_rpc_protobuf_EchoRequest_descriptor,
-                    new java.lang.String[] { "Name", "Group", });
+                    new String[] { "Name", "Group", });
         internal_static_com_alipay_sofa_rpc_protobuf_EchoResponse_descriptor =
                 getDescriptor().getMessageTypes().get(1);
         internal_static_com_alipay_sofa_rpc_protobuf_EchoResponse_fieldAccessorTable = new
                 com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                     internal_static_com_alipay_sofa_rpc_protobuf_EchoResponse_descriptor,
-                    new java.lang.String[] { "Code", "Message", });
+                    new String[] { "Code", "Message", });
     }
 
     // @@protoc_insertion_point(outer_class_scope)

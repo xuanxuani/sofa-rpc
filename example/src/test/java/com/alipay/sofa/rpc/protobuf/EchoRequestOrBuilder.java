@@ -26,7 +26,7 @@ public interface EchoRequestOrBuilder extends
     /**
      * <code>string name = 1;</code>
      */
-    java.lang.String getName();
+    String getName();
 
     /**
      * <code>string name = 1;</code>
@@ -42,5 +42,5 @@ public interface EchoRequestOrBuilder extends
     /**
      * <code>.com.alipay.sofa.rpc.protobuf.Group group = 2;</code>
      */
-    com.alipay.sofa.rpc.protobuf.Group getGroup();
+    Group getGroup();
 }

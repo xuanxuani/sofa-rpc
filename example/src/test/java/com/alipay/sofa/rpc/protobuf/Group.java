@@ -45,7 +45,7 @@ public enum Group
 
     public final int getNumber() {
         if (this == UNRECOGNIZED) {
-            throw new java.lang.IllegalArgumentException(
+            throw new IllegalArgumentException(
                 "Can't get the number of an unknown enum value.");
         }
         return value;
@@ -54,7 +54,7 @@ public enum Group
     /**
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static Group valueOf(int value) {
         return forNumber(value);
     }
@@ -95,7 +95,7 @@ public enum Group
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor
             getDescriptor() {
-        return com.alipay.sofa.rpc.protobuf.ProtoServiceOuterClass.getDescriptor().getEnumTypes().get(0);
+        return ProtoServiceOuterClass.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final Group[] VALUES = values();
@@ -103,7 +103,7 @@ public enum Group
     public static Group valueOf(
                                 com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
-            throw new java.lang.IllegalArgumentException(
+            throw new IllegalArgumentException(
                 "EnumValueDescriptor is not for this type.");
         }
         if (desc.getIndex() == -1) {

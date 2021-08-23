@@ -36,7 +36,7 @@ public final class EchoRequest extends
         group_ = 0;
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
             getUnknownFields() {
         return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
@@ -63,7 +63,7 @@ public final class EchoRequest extends
                         break;
                     }
                     case 10: {
-                        java.lang.String s = input.readStringRequireUtf8();
+                        String s = input.readStringRequireUtf8();
 
                         name_ = s;
                         break;
@@ -88,30 +88,30 @@ public final class EchoRequest extends
 
     public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-        return com.alipay.sofa.rpc.protobuf.ProtoServiceOuterClass.internal_static_com_alipay_sofa_rpc_protobuf_EchoRequest_descriptor;
+        return ProtoServiceOuterClass.internal_static_com_alipay_sofa_rpc_protobuf_EchoRequest_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
             internalGetFieldAccessorTable() {
-        return com.alipay.sofa.rpc.protobuf.ProtoServiceOuterClass.internal_static_com_alipay_sofa_rpc_protobuf_EchoRequest_fieldAccessorTable
+        return ProtoServiceOuterClass.internal_static_com_alipay_sofa_rpc_protobuf_EchoRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.alipay.sofa.rpc.protobuf.EchoRequest.class, com.alipay.sofa.rpc.protobuf.EchoRequest.Builder.class);
+                EchoRequest.class, Builder.class);
     }
 
     public static final int           NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+    private volatile Object name_;
 
     /**
      * <code>string name = 1;</code>
      */
-    public java.lang.String getName() {
-        java.lang.Object ref = name_;
-        if (ref instanceof java.lang.String) {
-            return (java.lang.String) ref;
+    public String getName() {
+        Object ref = name_;
+        if (ref instanceof String) {
+            return (String) ref;
         } else {
             com.google.protobuf.ByteString bs =
                     (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
+            String s = bs.toStringUtf8();
             name_ = s;
             return s;
         }
@@ -122,11 +122,11 @@ public final class EchoRequest extends
      */
     public com.google.protobuf.ByteString
             getNameBytes() {
-        java.lang.Object ref = name_;
-        if (ref instanceof java.lang.String) {
+        Object ref = name_;
+        if (ref instanceof String) {
             com.google.protobuf.ByteString b =
                     com.google.protobuf.ByteString.copyFromUtf8(
-                        (java.lang.String) ref);
+                        (String) ref);
             name_ = b;
             return b;
         } else {
@@ -147,9 +147,9 @@ public final class EchoRequest extends
     /**
      * <code>.com.alipay.sofa.rpc.protobuf.Group group = 2;</code>
      */
-    public com.alipay.sofa.rpc.protobuf.Group getGroup() {
-        com.alipay.sofa.rpc.protobuf.Group result = com.alipay.sofa.rpc.protobuf.Group.valueOf(group_);
-        return result == null ? com.alipay.sofa.rpc.protobuf.Group.UNRECOGNIZED : result;
+    public Group getGroup() {
+        Group result = Group.valueOf(group_);
+        return result == null ? Group.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -170,7 +170,7 @@ public final class EchoRequest extends
         if (!getNameBytes().isEmpty()) {
             com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
         }
-        if (group_ != com.alipay.sofa.rpc.protobuf.Group.A.getNumber()) {
+        if (group_ != Group.A.getNumber()) {
             output.writeEnum(2, group_);
         }
     }
@@ -184,7 +184,7 @@ public final class EchoRequest extends
         if (!getNameBytes().isEmpty()) {
             size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
         }
-        if (group_ != com.alipay.sofa.rpc.protobuf.Group.A.getNumber()) {
+        if (group_ != Group.A.getNumber()) {
             size += com.google.protobuf.CodedOutputStream
                 .computeEnumSize(2, group_);
         }
@@ -194,15 +194,15 @@ public final class EchoRequest extends
 
     private static final long serialVersionUID = 0L;
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof com.alipay.sofa.rpc.protobuf.EchoRequest)) {
+        if (!(obj instanceof EchoRequest)) {
             return super.equals(obj);
         }
-        com.alipay.sofa.rpc.protobuf.EchoRequest other = (com.alipay.sofa.rpc.protobuf.EchoRequest) obj;
+        EchoRequest other = (EchoRequest) obj;
 
         boolean result = true;
         result = result && getName()
@@ -211,7 +211,7 @@ public final class EchoRequest extends
         return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
         if (memoizedHashCode != 0) {
             return memoizedHashCode;
@@ -227,38 +227,38 @@ public final class EchoRequest extends
         return hash;
     }
 
-    public static com.alipay.sofa.rpc.protobuf.EchoRequest parseFrom(
+    public static EchoRequest parseFrom(
                                                                      com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
     }
 
-    public static com.alipay.sofa.rpc.protobuf.EchoRequest parseFrom(
+    public static EchoRequest parseFrom(
                                                                      com.google.protobuf.ByteString data,
                                                                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
     }
 
-    public static com.alipay.sofa.rpc.protobuf.EchoRequest parseFrom(byte[] data)
+    public static EchoRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
     }
 
-    public static com.alipay.sofa.rpc.protobuf.EchoRequest parseFrom(
+    public static EchoRequest parseFrom(
                                                                      byte[] data,
                                                                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
     }
 
-    public static com.alipay.sofa.rpc.protobuf.EchoRequest parseFrom(java.io.InputStream input)
+    public static EchoRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
     }
 
-    public static com.alipay.sofa.rpc.protobuf.EchoRequest parseFrom(
+    public static EchoRequest parseFrom(
                                                                      java.io.InputStream input,
                                                                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -266,13 +266,13 @@ public final class EchoRequest extends
             .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static com.alipay.sofa.rpc.protobuf.EchoRequest parseDelimitedFrom(java.io.InputStream input)
+    public static EchoRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static com.alipay.sofa.rpc.protobuf.EchoRequest parseDelimitedFrom(
+    public static EchoRequest parseDelimitedFrom(
                                                                               java.io.InputStream input,
                                                                               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -280,14 +280,14 @@ public final class EchoRequest extends
             .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static com.alipay.sofa.rpc.protobuf.EchoRequest parseFrom(
+    public static EchoRequest parseFrom(
                                                                      com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
     }
 
-    public static com.alipay.sofa.rpc.protobuf.EchoRequest parseFrom(
+    public static EchoRequest parseFrom(
                                                                      com.google.protobuf.CodedInputStream input,
                                                                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -303,7 +303,7 @@ public final class EchoRequest extends
         return DEFAULT_INSTANCE.toBuilder();
     }
 
-    public static Builder newBuilder(com.alipay.sofa.rpc.protobuf.EchoRequest prototype) {
+    public static Builder newBuilder(EchoRequest prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
@@ -312,9 +312,9 @@ public final class EchoRequest extends
             ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-                                        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                                        BuilderParent parent) {
         Builder builder = new Builder(parent);
         return builder;
     }
@@ -326,18 +326,18 @@ public final class EchoRequest extends
                                      com.google.protobuf.GeneratedMessageV3.Builder<Builder>
                                                                                             implements
                                                                                             // @@protoc_insertion_point(builder_implements:com.alipay.sofa.rpc.protobuf.EchoRequest)
-                                                                                            com.alipay.sofa.rpc.protobuf.EchoRequestOrBuilder {
+                                                                                            EchoRequestOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
                 getDescriptor() {
-            return com.alipay.sofa.rpc.protobuf.ProtoServiceOuterClass.internal_static_com_alipay_sofa_rpc_protobuf_EchoRequest_descriptor;
+            return ProtoServiceOuterClass.internal_static_com_alipay_sofa_rpc_protobuf_EchoRequest_descriptor;
         }
 
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        protected FieldAccessorTable
                 internalGetFieldAccessorTable() {
-            return com.alipay.sofa.rpc.protobuf.ProtoServiceOuterClass.internal_static_com_alipay_sofa_rpc_protobuf_EchoRequest_fieldAccessorTable
+            return ProtoServiceOuterClass.internal_static_com_alipay_sofa_rpc_protobuf_EchoRequest_fieldAccessorTable
                 .ensureFieldAccessorsInitialized(
-                    com.alipay.sofa.rpc.protobuf.EchoRequest.class,
-                    com.alipay.sofa.rpc.protobuf.EchoRequest.Builder.class);
+                    EchoRequest.class,
+                    Builder.class);
         }
 
         // Construct using com.alipay.sofa.rpc.protobuf.EchoRequest.newBuilder()
@@ -346,7 +346,7 @@ public final class EchoRequest extends
         }
 
         private Builder(
-                        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                        BuilderParent parent) {
             super(parent);
             maybeForceBuilderInitialization();
         }
@@ -367,23 +367,23 @@ public final class EchoRequest extends
 
         public com.google.protobuf.Descriptors.Descriptor
                 getDescriptorForType() {
-            return com.alipay.sofa.rpc.protobuf.ProtoServiceOuterClass.internal_static_com_alipay_sofa_rpc_protobuf_EchoRequest_descriptor;
+            return ProtoServiceOuterClass.internal_static_com_alipay_sofa_rpc_protobuf_EchoRequest_descriptor;
         }
 
-        public com.alipay.sofa.rpc.protobuf.EchoRequest getDefaultInstanceForType() {
-            return com.alipay.sofa.rpc.protobuf.EchoRequest.getDefaultInstance();
+        public EchoRequest getDefaultInstanceForType() {
+            return EchoRequest.getDefaultInstance();
         }
 
-        public com.alipay.sofa.rpc.protobuf.EchoRequest build() {
-            com.alipay.sofa.rpc.protobuf.EchoRequest result = buildPartial();
+        public EchoRequest build() {
+            EchoRequest result = buildPartial();
             if (!result.isInitialized()) {
                 throw newUninitializedMessageException(result);
             }
             return result;
         }
 
-        public com.alipay.sofa.rpc.protobuf.EchoRequest buildPartial() {
-            com.alipay.sofa.rpc.protobuf.EchoRequest result = new com.alipay.sofa.rpc.protobuf.EchoRequest(this);
+        public EchoRequest buildPartial() {
+            EchoRequest result = new EchoRequest(this);
             result.name_ = name_;
             result.group_ = group_;
             onBuilt();
@@ -423,16 +423,16 @@ public final class EchoRequest extends
         }
 
         public Builder mergeFrom(com.google.protobuf.Message other) {
-            if (other instanceof com.alipay.sofa.rpc.protobuf.EchoRequest) {
-                return mergeFrom((com.alipay.sofa.rpc.protobuf.EchoRequest) other);
+            if (other instanceof EchoRequest) {
+                return mergeFrom((EchoRequest) other);
             } else {
                 super.mergeFrom(other);
                 return this;
             }
         }
 
-        public Builder mergeFrom(com.alipay.sofa.rpc.protobuf.EchoRequest other) {
-            if (other == com.alipay.sofa.rpc.protobuf.EchoRequest.getDefaultInstance())
+        public Builder mergeFrom(EchoRequest other) {
+            if (other == EchoRequest.getDefaultInstance())
                 return this;
             if (!other.getName().isEmpty()) {
                 name_ = other.name_;
@@ -453,11 +453,11 @@ public final class EchoRequest extends
                                  com.google.protobuf.CodedInputStream input,
                                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-            com.alipay.sofa.rpc.protobuf.EchoRequest parsedMessage = null;
+            EchoRequest parsedMessage = null;
             try {
                 parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
             } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                parsedMessage = (com.alipay.sofa.rpc.protobuf.EchoRequest) e.getUnfinishedMessage();
+                parsedMessage = (EchoRequest) e.getUnfinishedMessage();
                 throw e.unwrapIOException();
             } finally {
                 if (parsedMessage != null) {
@@ -467,21 +467,21 @@ public final class EchoRequest extends
             return this;
         }
 
-        private java.lang.Object name_ = "";
+        private Object name_ = "";
 
         /**
          * <code>string name = 1;</code>
          */
-        public java.lang.String getName() {
-            java.lang.Object ref = name_;
-            if (!(ref instanceof java.lang.String)) {
+        public String getName() {
+            Object ref = name_;
+            if (!(ref instanceof String)) {
                 com.google.protobuf.ByteString bs =
                         (com.google.protobuf.ByteString) ref;
-                java.lang.String s = bs.toStringUtf8();
+                String s = bs.toStringUtf8();
                 name_ = s;
                 return s;
             } else {
-                return (java.lang.String) ref;
+                return (String) ref;
             }
         }
 
@@ -490,11 +490,11 @@ public final class EchoRequest extends
          */
         public com.google.protobuf.ByteString
                 getNameBytes() {
-            java.lang.Object ref = name_;
+            Object ref = name_;
             if (ref instanceof String) {
                 com.google.protobuf.ByteString b =
                         com.google.protobuf.ByteString.copyFromUtf8(
-                            (java.lang.String) ref);
+                            (String) ref);
                 name_ = b;
                 return b;
             } else {
@@ -506,7 +506,7 @@ public final class EchoRequest extends
          * <code>string name = 1;</code>
          */
         public Builder setName(
-                               java.lang.String value) {
+                               String value) {
             if (value == null) {
                 throw new NullPointerException();
             }
@@ -562,15 +562,15 @@ public final class EchoRequest extends
         /**
          * <code>.com.alipay.sofa.rpc.protobuf.Group group = 2;</code>
          */
-        public com.alipay.sofa.rpc.protobuf.Group getGroup() {
-            com.alipay.sofa.rpc.protobuf.Group result = com.alipay.sofa.rpc.protobuf.Group.valueOf(group_);
-            return result == null ? com.alipay.sofa.rpc.protobuf.Group.UNRECOGNIZED : result;
+        public Group getGroup() {
+            Group result = Group.valueOf(group_);
+            return result == null ? Group.UNRECOGNIZED : result;
         }
 
         /**
          * <code>.com.alipay.sofa.rpc.protobuf.Group group = 2;</code>
          */
-        public Builder setGroup(com.alipay.sofa.rpc.protobuf.Group value) {
+        public Builder setGroup(Group value) {
             if (value == null) {
                 throw new NullPointerException();
             }
@@ -604,12 +604,12 @@ public final class EchoRequest extends
     }
 
     // @@protoc_insertion_point(class_scope:com.alipay.sofa.rpc.protobuf.EchoRequest)
-    private static final com.alipay.sofa.rpc.protobuf.EchoRequest DEFAULT_INSTANCE;
+    private static final EchoRequest DEFAULT_INSTANCE;
     static {
-        DEFAULT_INSTANCE = new com.alipay.sofa.rpc.protobuf.EchoRequest();
+        DEFAULT_INSTANCE = new EchoRequest();
     }
 
-    public static com.alipay.sofa.rpc.protobuf.EchoRequest getDefaultInstance() {
+    public static EchoRequest getDefaultInstance() {
         return DEFAULT_INSTANCE;
     }
 
@@ -627,12 +627,12 @@ public final class EchoRequest extends
         return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<EchoRequest> getParserForType() {
         return PARSER;
     }
 
-    public com.alipay.sofa.rpc.protobuf.EchoRequest getDefaultInstanceForType() {
+    public EchoRequest getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 

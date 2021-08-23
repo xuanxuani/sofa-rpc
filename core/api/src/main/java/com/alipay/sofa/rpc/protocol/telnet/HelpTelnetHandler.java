@@ -67,7 +67,15 @@ public class HelpTelnetHandler implements TelnetHandler {
 
     @Override
     public String getDescription() {
-        return "show all support commands!" + LINE + "Usage:\thelp" + LINE + "\thelp [cmd]";
+        StringBuilder description = new StringBuilder();
+        description.append("show all support commands!" + LINE + "Usage:\thelp" + LINE + "\thelp [cmd]");
+        description.append(LINE + "\tlist"+"\t\tshow all Services");
+        description.append(LINE + "\tlist -p"+"\t\tshow Provided Services");
+        description.append(LINE + "\tlist -c"+"\t\tshow Referred Services");
+        description.append(LINE + "\tservice" + "\t\t[<app>]"+"\tshow ProviderConfig");
+        description.append(LINE + "\treference" + "\t[<app>]"+"\tshow ConsumerConfig");
+//        return "show all support commands!" + LINE + "Usage:\thelp" + LINE + "\thelp [cmd]";
+        return description.toString();
     }
 
 }

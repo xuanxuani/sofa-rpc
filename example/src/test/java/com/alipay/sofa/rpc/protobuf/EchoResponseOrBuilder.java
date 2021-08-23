@@ -31,7 +31,7 @@ public interface EchoResponseOrBuilder extends
     /**
      * <code>string message = 2;</code>
      */
-    java.lang.String getMessage();
+    String getMessage();
 
     /**
      * <code>string message = 2;</code>
